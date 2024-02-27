@@ -1,0 +1,23 @@
+server:
+  port: 8081
+spring:
+  devtools:
+    add-properties: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/gestion_visite_entreprise
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+    generate-ddl: true
+    properties:
+      hibernate:
+        transaction:
+          jta:
+            platform: org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform
+        ejb:
+          use_class_enhancer: true
